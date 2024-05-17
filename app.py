@@ -1,27 +1,33 @@
+import os
 from slack_sdk import WebClient
-from slack_sdk.rtm import RTMClient
+from slack_sdk.errors import SlackApiError
+from slack_sdk.rtm_v2 import RTMClient
 
-# Initialize the Slack client with your bot's token
-token = 'YOUR_BOT_USER_OAUTH_TOKEN'
-client = WebClient(token=token)
+# Get the Slack bot token from environment variables
+slack_token = os.getenv("SLACK_BOT_TOKEN")
 
-# Define an event handler for messages
+# Initialize the Slack client
+client = WebClient(token=slack_token)
+
+@RTMClient.run_on(event="message")
 def handle_message(**payload):
     data = payload['data']
     web_client = payload['web_client']
-    rtm_client = payload['rtm_client']
-
-    if 'text' in data and 'Hello' in data['text']:
+    if 'text' in data and 'bot_id' not in data:
         channel_id = data['channel']
-        thread_ts = data['ts']
         user = data['user']
+        text = data['text']
+        
+        response = f"Hello <@{user}>! You said: {text}"
+        
+        try:
+            web_client.chat_postMessage(
+                channel=channel_id,
+                text=response
+            )
+        except SlackApiError as e:
+            print(f"Error posting message: {e.response['error']}")
 
-        web_client.chat_postMessage(channel=channel_id, text=f"Hello <@{user}>!", thread_ts=thread_ts)
-
-# Start the RTM client
-def main():
-    rtm_client = RTMClient(token=token)
-    rtm_client.start()
-
-if __name__ == '__main__':
-    main()
+# Initialize the RTM client
+rtm_client = RTMClient(token=slack_token)
+rtm_client.start()
