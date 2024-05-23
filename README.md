@@ -2,6 +2,11 @@
 
 This repository contains a demo implementation of a Slack bot designed to integrate with PR Pilot via the `/pilot` slash command.
 
+
+## Demo Video
+
+[![Watch the video](https://img.youtube.com/vi/QuSsMHLqTBk/maxresdefault.jpg)](https://youtu.be/QuSsMHLqTBk)
+
 ## Prerequisites
 
 1. Follow the [Slack Bolt Getting Started Guide](https://slack.dev/bolt-python/tutorial/getting-started) to create your Slack app
