@@ -1,43 +1,27 @@
-<div align="center">
-<img src="https://avatars.githubusercontent.com/ml/17635?s=140&v=" width="100" alt="PR Pilot Logo">
-</div>
-<p align="center">
-  <a href="https://github.com/apps/pr-pilot-ai/installations/new"><b>Install</b></a> |
-  <a href="https://docs.pr-pilot.ai">Documentation</a> | 
-  <a href="https://www.pr-pilot.ai/blog">Blog</a> | 
-  <a href="https://www.pr-pilot.ai">Website</a>
-</p>
+# Slack Bot for PR Pilot
 
-# Smart Project Starter
+This repository contains the implementation of a Slack bot designed to integrate with PR Pilot, facilitating automated interactions and task management within Slack.
 
-This project comes with **[Smart Workflows](https://github.com/PR-Pilot-AI/smart-workflows/tree/main)** that use an AI agent
-to automate Github projects in powerful ways.
+## Features
 
-* **Plug-and-play** - Install new automations and tools with the click of a button
-* **Fully Customizable** using natural language instructions.
-* **LLM Best Practices** baked in, so you can focus on what matters
+- **Command Handling**: Processes commands sent via Slack to interact with the PR Pilot system.
+- **Task Tracking**: Provides updates and results of tasks initiated through Slack commands.
 
-## Using the Template
+## Installation
 
-1. Create a **[new Github project using this template](https://github.com/new?template_name=smart-project-starter&template_owner=PR-Pilot-AI)**
-2. **[Install the AI agent](https://github.com/apps/pr-pilot-ai/installations/new)** on your repository
+1. Clone the repository.
+2. Install dependencies using `pip install -r requirements.txt`.
+3. Set up the necessary environment variables (`SLACK_SIGNING_SECRET`, `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN`).
+4. Run the bot using `python app.py`.
 
-### Generate Initial Project Files
+## Usage
 
-The template comes with a Github action that allows you to quickly generate an initial set of files for your new project.
-Open the `Actions` tab 
+Use the `/pilot` command in Slack to interact with the PR Pilot system. The bot will handle the command and provide feedback directly in Slack.
 
-<img src="github_tabs.png" width="350" alt="Actions Tab">
+## Contributing
 
-Then:
-* Select the **🚀 Initialize Project** workflow
-* Enter your project details (language, framework, description) and hit run
-* Wait for PR Pilot to open a new PR with your project files
+Contributions are welcome! Please read the CONTRIBUTING.md for guidelines on how to contribute to this project.
 
-### Importing More Tools and Automations
+## License
 
-You can easily import more tools and automations using the **`🔄 Import Smart Workflow`** action. Just enter the ID of the **[Smart Workflow](https://github.com/PR-Pilot-AI/smart-workflows/tree/main)** you'd like to import:
-
-![Import Workflow](github_run_workflow.png)
-
-A new PR will be created that contains your imported workflow and ideas for how to customize for your project's needs.
+Distributed under the MIT License. See `LICENSE` file for more information.
