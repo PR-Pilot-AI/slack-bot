@@ -1,0 +1,2 @@
+slack_bolt==1.18.1
+pr-pilot==1.4.0
