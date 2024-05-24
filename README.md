@@ -12,7 +12,8 @@ For more information, check out the [blog post](https://www.pr-pilot.ai/blog/a-n
 ## Prerequisites
 
 1. Follow the [Slack Bolt Getting Started Guide](https://slack.dev/bolt-python/tutorial/getting-started) to create your Slack app
-2. Create an API Key in your [PR Pilot Dashboard](https://app.pr-pilot.ai/dashboard/api-keys/)
+2. [Install PR Pilot](https://github.com/apps/pr-pilot-ai/installations/new) into your repository
+3. Create an API Key in your [PR Pilot Dashboard](https://app.pr-pilot.ai/dashboard/api-keys/)
 
 ## Installation
 
