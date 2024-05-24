@@ -2,6 +2,8 @@
 
 This repository contains a demo implementation of a Slack bot designed to integrate with PR Pilot via the `/pilot` slash command.
 
+For more information, check out the [blog post](https://www.pr-pilot.ai/blog/a-natural-language-interface-between-slack-and-github).
+
 
 ## Demo Video
 
